@@ -1,7 +1,19 @@
-.link {
-  color: #fff;
-  font-size: 20px;
-  padding: 30px;
-  font-weight: bold;
-  text-decoration: none;
+.header {
+  background-color: gray;
+}
+
+.nav_list {
+  height: 60px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav_btn {
+  color: white;
+}
+
+.nav_btn_active {
+  color: blue;
 }
