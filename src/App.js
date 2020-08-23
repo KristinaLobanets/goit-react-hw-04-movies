@@ -2,6 +2,7 @@ import React, { Component, Suspense, lazy } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Components/Header/Header";
+import Cast from "./Components/Cast/Cast";
 
 const HomePage = lazy(() => import("./Components/HomePage/HomePage.js"));
 
@@ -21,6 +22,7 @@ export class App extends Component {
             <Route path="/" exact component={HomePage} />
             <Route path="/movies" exact component={MoviesPage} />
             <Route path="/movies/:movieId" component={MovieDetailsPage} />
+
             <Redirect to="/" />
           </Switch>
         </Suspense>
