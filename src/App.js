@@ -2,7 +2,6 @@ import React, { Component, Suspense, lazy } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Components/Header/Header";
-import Cast from "./Components/Cast/Cast";
 
 const HomePage = lazy(() => import("./Components/HomePage/HomePage.js"));
 

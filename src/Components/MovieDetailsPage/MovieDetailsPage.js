@@ -2,7 +2,7 @@ import React, { Component, Suspense, lazy } from "react";
 import styles from "./MovieDetailsPage.module.css";
 import Api from "../../Helpers/Api";
 import { NavLink } from "react-router-dom";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 const Cast = lazy(() => import("../../Components/Cast/Cast.js"));
 

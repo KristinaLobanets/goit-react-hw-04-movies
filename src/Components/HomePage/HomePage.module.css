@@ -1,6 +1,21 @@
 .li {
   text-align: left;
+  text-decoration: none;
 }
 .h1 {
   text-align: left;
+}
+
+.films {
+  text-decoration: none;
+}
+
+.film {
+  text-align: left;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+  font-size: 18px;
+
+  color: rgb(41, 40, 40);
 }

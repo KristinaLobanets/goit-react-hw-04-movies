@@ -12,6 +12,9 @@
 
 .nav_btn {
   color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: sans-serif;
 }
 
 .nav_btn_active {

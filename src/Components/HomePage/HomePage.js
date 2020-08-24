@@ -16,11 +16,12 @@ class HomePage extends Component {
 
   render() {
     return (
-      <ul>
+      <ul className={styles.films}>
         {this.state.films.length > 0 &&
           this.state.films.map((item) => (
-            <li key={item.id}>
+            <li className={styles.film} key={item.id}>
               <NavLink
+                className={styles.film}
                 exact
                 to={{
                   pathname: `movies/${item.id}`,
