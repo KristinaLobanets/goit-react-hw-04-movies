@@ -6,7 +6,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 const Cast = lazy(() => import("../../Components/Cast/Cast.js"));
 
-// const Reviews = lazy(() => import("../../Components/Reviews/Reviews.js"));
+const Reviews = lazy(() => import("../../Components/Reviews/Reviews.js"));
 
 class MovieDetailsPage extends Component {
   state = {
@@ -105,11 +105,11 @@ class MovieDetailsPage extends Component {
             path={`${this.props.match.path}/cast`}
             component={Cast}
           />
-          {/* <Route
+          <Route
             exact
             path={`${this.props.match.path}/review`}
             component={Reviews}
-          /> */}
+          />
         </Suspense>
       </>
     );

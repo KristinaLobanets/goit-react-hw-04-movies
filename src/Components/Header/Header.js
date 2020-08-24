@@ -5,22 +5,22 @@ import { render } from "@testing-library/react";
 
 const Header = () => {
   return (
-    <div className="header">
-      <ul className="nav_list">
-        <li className="nav_item">
+    <div className={styles.header}>
+      <ul className={styles.nav_list}>
+        <li className={styles.nav_item}>
           <NavLink
             to="/"
             exact
-            className="nav_btn"
+            className={styles.nav_btn}
             activeClassName="nav_btn_active"
           >
             HOME
           </NavLink>
         </li>
-        <li className="nav_item">
+        <li className={styles.nav_item}>
           <NavLink
             to="/movies"
-            className="nav_btn"
+            className={styles.nav_btn}
             activeClassName="nav_btn_active"
           >
             MOVIES
