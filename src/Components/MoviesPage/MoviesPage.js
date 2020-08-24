@@ -41,10 +41,11 @@ class MoviesPage extends Component {
       <>
         <SearchForm onSubmit={this.changeSearch}></SearchForm>
         {this.state.movies.length > 0 && (
-          <ul>
+          <ul className={styles.films}>
             {this.state.movies.map((item) => (
-              <li key={item.id}>
+              <li className={styles.film_li} key={item.id}>
                 <NavLink
+                  className={styles.film}
                   to={{
                     pathname: `movies/${item.id}`,
                     state: { from: this.props.location },

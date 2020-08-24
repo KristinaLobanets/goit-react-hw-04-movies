@@ -60,19 +60,23 @@
   font-weight: 600;
 }
 .details_additional_list {
+  display: flex;
+  justify-content: space-around;
   list-style: none;
   margin-bottom: 20px;
+  background-color: gray;
 }
 .details_additional_list_item {
-  margin-right: 40px;
-  margin-bottom: 10px;
+  margin: 20px;
 }
 .additional_link {
   text-decoration: none;
   font-size: 20px;
   font-weight: 500;
-  color: black;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
 }
 .additional_link:hover {
-  color: palevioletred;
+  color: lemonchiffon;
 }

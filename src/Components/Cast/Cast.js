@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import styles from "./Cast.module.css";
 import Api from "../../Helpers/Api";
 

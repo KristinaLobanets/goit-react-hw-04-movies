@@ -1,0 +1,33 @@
+.cast_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cast_item {
+  display: flex;
+  flex-wrap: wrap;
+  width: 370px;
+  height: 150px;
+  margin: 5px;
+  border: 2px solid gray;
+}
+
+.cast_img {
+  width: auto;
+  height: 146px;
+  margin: 2px;
+}
+
+.cast_char {
+  font-family: sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin: 20px;
+}
+
+.cast_name {
+  font-family: sans-serif;
+  font-size: 14px;
+  text-align: center;
+  margin: 20px;
+}
