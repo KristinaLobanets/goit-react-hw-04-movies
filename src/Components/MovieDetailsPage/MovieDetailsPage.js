@@ -20,6 +20,12 @@ class MovieDetailsPage extends Component {
     );
   }
 
+  handleGoBack = () => {
+    if (this.props.location.state && this.props.location.state.from) {
+      this.props.history.push(this.props.location.state.from);
+    }
+  };
+
   render() {
     const { movie, img } = this.state;
     return (

@@ -1,38 +1,62 @@
 import React, { Component } from "react";
 import Api from "../../Helpers/Api";
 import styles from "./MoviesPage.module.css";
+import SearchForm from "../SearchForm/SearchForm";
+import QueryString from "query-string";
+import { NavLink } from "react-router-dom";
 
 class MoviesPage extends Component {
   state = {
     movies: [],
-    search: "",
   };
 
-  componentDidMount() {}
-
-  inputHandler() {
-    console.log("aaa");
+  componentDidUpdate(prevProps, prevState) {
+    const { query: prevQuery } = QueryString.parse(prevProps.location.search);
+    const { query: query } = QueryString.parse(this.props.location.search);
+    if (prevQuery !== query) {
+      Api.movieFinderUrl(query).then((res) =>
+        this.setState({ movies: [...res] })
+      );
+    }
   }
 
-  submitHandler() {
-    console.log("submitHandler");
+  changeSearch = (search) => {
+    this.props.history.push({
+      pathname: this.props.location.pathname,
+      search: `query=${search}`,
+    });
+  };
+
+  componentDidMount() {
+    const { query } = QueryString.parse(this.props.location.search);
+    if (query) {
+      Api.movieFinderUrl(query).then((res) =>
+        this.setState({ movies: [...res] })
+      );
+    }
   }
 
   render() {
-    const { movies, search } = this.state;
     return (
-      <div>
-        <form className={styles.form} onSubmit={this.submitHandler}>
-          <input
-            className={styles.input}
-            type="text"
-            name="search"
-            value={search}
-            onChange={this.inputHandler}
-          ></input>
-          <button className={styles.button}>Search</button>
-        </form>
-      </div>
+      <>
+        <SearchForm onSubmit={this.changeSearch}></SearchForm>
+        {this.state.movies.length > 0 && (
+          <ul>
+            {this.state.movies.map((item) => (
+              <li key={item.id}>
+                <NavLink
+                  to={{
+                    pathname: `movies/${item.id}`,
+                    state: { from: this.props.location },
+                  }}
+                >
+                  {item.title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        )}
+      </>
     );
   }
 }
