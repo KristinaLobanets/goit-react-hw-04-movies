@@ -19,7 +19,7 @@ class HomePage extends Component {
       <ul className={styles.films}>
         {this.state.films.length > 0 &&
           this.state.films.map((item) => (
-            <li className={styles.film} key={item.id}>
+            <li className={styles.film_li} key={item.id}>
               <NavLink
                 className={styles.film}
                 exact

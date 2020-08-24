@@ -17,6 +17,10 @@
   font-family: sans-serif;
 }
 
+.nav_btn:hover {
+  color: lemonchiffon;
+}
+
 .nav_btn_active {
   color: blue;
 }
