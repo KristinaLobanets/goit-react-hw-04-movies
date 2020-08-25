@@ -20,14 +20,29 @@ class MovieDetailsPage extends Component {
     );
   }
 
+  // handleGoBack = () => {
+  //   if (this.props.location.state && this.props.location.state.from) {
+  //     this.props.history.push(this.props.location.state.from);
+  //   }
+  // };
+
   handleGoBack = () => {
-    if (this.props.location.state && this.props.location.state.from) {
-      this.props.history.push(this.props.location.state.from);
+    const { location, history } = this.props;
+    console.log("location", location);
+
+    if (location.state && location.state.from) {
+      return history.push(location.state.from);
     }
+
+    this.props.history.push({
+      pathname: "/movies",
+      state: location,
+    });
   };
 
   render() {
     const { movie, img } = this.state;
+    const { match, location } = this.props;
     return (
       <>
         <button
@@ -81,8 +96,8 @@ class MovieDetailsPage extends Component {
                     activeClassName={styles.additional_link_active}
                     exact
                     to={{
-                      pathname: `/movies/${this.props.match.params.movieId}/cast`,
-                      state: { from: this.props.location },
+                      pathname: `${match.url}/cast`,
+                      state: location.state,
                     }}
                   >
                     Cast
@@ -95,7 +110,7 @@ class MovieDetailsPage extends Component {
                     exact
                     to={{
                       pathname: `/movies/${this.props.match.params.movieId}/review`,
-                      state: { from: this.props.location },
+                      state: location.state,
                     }}
                   >
                     Reviews
