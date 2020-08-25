@@ -12,7 +12,7 @@ class MoviesPage extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { query: prevQuery } = QueryString.parse(prevProps.location.search);
-    const { query: query } = QueryString.parse(this.props.location.search);
+    const { query } = QueryString.parse(this.props.location.search);
     if (prevQuery !== query) {
       Api.movieFinderUrl(query).then((res) =>
         this.setState({ movies: [...res] })
